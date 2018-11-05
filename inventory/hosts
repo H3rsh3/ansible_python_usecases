@@ -1,0 +1,128 @@
+[test_routers]
+rtr4 ansible_host=173.212.4.253
+rtr5 ansible_host=173.212.5.253
+rtr6 ansible_host=173.212.6.253
+rtr203 ansible_host=173.212.203.253
+rtr207 ansible_host=173.212.207.253
+rtr2173 ansible_host=173.212.213.253
+
+[batch_a]
+rtr219 ansible_host=173.212.219.253
+rtr192 ansible_host=173.212.192.253
+rtr224 ansible_host=173.212.224.253
+rtr44 ansible_host=173.212.44.253
+rtr222 ansible_host=173.212.222.253
+rtr185 ansible_host=173.212.185.253
+rtr33 ansible_host=173.212.33.253
+rtr59 ansible_host=173.212.59.253
+
+
+[all_routers]
+rtr1 ansible_host=173.212.1.253
+rtr2 ansible_host=173.212.2.253
+rtr3_1 ansible_host=173.3.15.2
+rtr3_2 ansible_host=173.3.15.3
+rtr4 ansible_host=173.212.4.253
+rtr5 ansible_host=173.212.5.253
+rtr6 ansible_host=173.212.6.253
+rtr7 ansible_host=173.212.7.253
+rtr8 ansible_host=173.212.8.253
+rtr9 ansible_host=173.212.9.253
+rtr173 ansible_host=173.212.173.253
+rtr11 ansible_host=173.212.11.253
+rtr12 ansible_host=173.212.12.253
+rtr13 ansible_host=173.212.13.253
+rtr14 ansible_host=173.212.14.253
+rtr15 ansible_host=173.212.15.253
+rtr16 ansible_host=173.212.16.253
+rtr17 ansible_host=173.212.17.253
+rtr18 ansible_host=173.212.18.253
+rtr19 ansible_host=173.212.19.253
+rtr20 ansible_host=173.212.20.253
+rtr23 ansible_host=173.212.23.253
+rtr24 ansible_host=173.212.24.253
+rtr25 ansible_host=173.212.25.253
+rtr27 ansible_host=173.212.27.253
+rtr28 ansible_host=173.212.28.253
+rtr29 ansible_host=173.212.29.253
+rtr30 ansible_host=173.212.30.253
+rtr31 ansible_host=173.212.31.253
+rtr32 ansible_host=173.212.32.253
+rtr33 ansible_host=173.212.33.253
+rtr34 ansible_host=173.212.34.253
+rtr35 ansible_host=173.212.35.253
+rtr36 ansible_host=173.212.36.253
+rtr37 ansible_host=173.212.37.253
+rtr38 ansible_host=173.212.38.253
+rtr42 ansible_host=173.212.42.253
+rtr44 ansible_host=173.212.44.253
+rtr51 ansible_host=173.212.51.253
+rtr58 ansible_host=173.212.58.253
+rtr59 ansible_host=173.212.59.253
+rtr63 ansible_host=173.212.63.253
+rtr64 ansible_host=173.212.64.253
+rtr65 ansible_host=173.212.65.253
+rtr66 ansible_host=173.212.66.253
+rtr67 ansible_host=173.212.67.253
+rtr69 ansible_host=173.212.69.253
+rtr70 ansible_host=173.212.70.253
+rtr72 ansible_host=173.212.72.253
+rtr74 ansible_host=173.212.74.253
+rtr75 ansible_host=173.212.75.253
+rtr77 ansible_host=173.212.77.253
+rtr85 ansible_host=173.212.85.253
+rtr89 ansible_host=173.212.89.253
+rtr92_1 ansible_host=173.212.92.204
+rtr92_2	ansible_host=173.212.92.214
+rtr95_1700 ansible_host=173.212.1.250
+rtr96_1 ansible_host=173.96.14.250
+rtr96_2 ansible_host=173.96.14.251
+rtr1731 ansible_host=173.212.1731.253
+rtr1732 ansible_host=173.212.1732.253
+rtr1733 ansible_host=173.212.1733.253
+rtr1735 ansible_host=173.212.1735.253
+rtr1736 ansible_host=173.212.1736.253
+rtr1173 ansible_host=173.212.1173.253
+rtr111 ansible_host=173.212.111.253
+rtr112 ansible_host=173.212.112.253
+rtr172 ansible_host=173.254.172.253
+rtr174 ansible_host=173.212.174.253
+rtr175 ansible_host=173.212.175.253
+rtr185 ansible_host=173.212.185.253
+rtr186 ansible_host=173.186.15.1
+rtr192 ansible_host=173.212.192.253
+rtr199 ansible_host=173.212.199.253
+rtr201 ansible_host=173.212.201.253
+rtr203 ansible_host=173.212.203.253
+rtr207 ansible_host=173.212.207.253
+rtr2173 ansible_host=173.212.2173.253
+rtr211 ansible_host=173.212.211.253
+rtr212 ansible_host=173.212.212.253
+rtr214 ansible_host=173.212.214.253
+rtr217 ansible_host=173.212.217.253
+rtr218 ansible_host=173.212.218.253
+rtr219 ansible_host=173.212.219.253
+rtr220 ansible_host=173.212.220.253
+rtr222 ansible_host=173.212.222.253
+rtr223 ansible_host=173.212.223.253
+rtr224 ansible_host=173.212.224.253
+rtr225 ansible_host=173.212.225.253
+rtr230 ansible_host=173.212.230.253
+rtr231 ansible_host=173.212.231.253
+
+[closed_site]
+rtr54 ansible_host=173.212.54.253
+rtr204 ansible_host=173.212.204.253
+rtr227 ansible_host=173.212.227.253
+rtr189 ansible_host=173.212.189.253
+
+[multi_routers]
+rtr3_1 ansible_host=173.3.15.2
+rtr3_2 ansible_host=173.3.15.3
+rtr92_1 ansible_host=173.212.92.204
+rtr92_2 ansible_host=173.212.92.214
+rtr96_1 ansible_host=173.96.14.250
+rtr96_2 ansible_host=173.96.14.251
+
+[other_sites]
+rtr80 ansible_host=173.212.80.253

@@ -1,0 +1,14 @@
+# Create filter (R1#show int | inc line protocol|Internet address)
+Value Interface (\S+)
+Value IP_Address (\S+)
+Value Status (\S+(( down)?))
+
+Start
+  ^^${Interface} is ${Status}.* -> Address
+  # This will match the interface output and reditect to state Address
+
+Address
+  # once in address, if its interface again keep the same line
+  ^^${Interface} is ${Status}.* -> Continue.NoRecord
+  # if the line with IP is found move to start
+  ^\s+Internet address is\s+${IP_Address} -> Record Start

@@ -1,0 +1,6 @@
+---
+- name: Create run
+  hosts: rtr211
+
+  roles:
+    - role: capture_state

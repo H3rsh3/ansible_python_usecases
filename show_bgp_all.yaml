@@ -1,0 +1,6 @@
+---
+- name: Create Templates
+  hosts: nmg_routers
+
+  roles:
+    - role: show_bgp

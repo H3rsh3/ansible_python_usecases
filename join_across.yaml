@@ -1,0 +1,3 @@
+---
+- name: Join Across
+  local_action: command python ./scripts/combine_across.py -t {{ TEMPLATE_FILE }} -s {{ PART_SOURCE_FILE_NAME }} -k {{ TABLE_KEY }}

@@ -1,0 +1,6 @@
+---
+- name: Create Templates
+  hosts: test_routers
+
+  roles:
+    - role: show_bgp

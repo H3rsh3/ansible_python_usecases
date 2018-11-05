@@ -1,0 +1,44 @@
+---
+- name: get ios facts
+  ios_facts:
+
+# - name: Grab commands
+#   ios_command:
+#     commands: show run
+#   register: showrun
+
+# - name: copy_to_file
+#   local_action: copy content={{ showrun.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_show_run.log
+
+# Gather Interface information
+- name: Fetch Intf paramaters
+  ios_command:
+    commands: "show run | sec interface"
+  register: showrunsec
+
+- name: copy_to_file
+  local_action: copy content={{ showrunsec.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_show_run_f_int.log
+
+- name: Parse
+  local_action: command python ./scripts/parse.py {{ ansible_net_hostname }}_show_run_f_int.log show_run_f_int_template
+
+
+# Gather Interface Name, State, and IP
+- name: Fetch Intf status
+  ios_command:
+    commands: "show int"
+  register: showint
+
+- name: copy_to_file
+  local_action: copy content={{ showint.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_show_int_f_lpip.log
+
+- name: Parse
+  local_action: command python ./scripts/parse.py {{ ansible_net_hostname }}_show_int_f_lpip.log show_int_f_lpip_template
+
+# Combine files
+- name: Join Data
+  local_action: command python ./scripts/join_intf_tables.py {{ ansible_net_hostname }}_show_int_f_lpip.log_prs.csv {{ ansible_net_hostname }}_show_run_f_int.log_prs.csv {{ ansible_net_hostname }}_intf
+
+# Process files
+- name: Process and Output Data
+  local_action: command python ./scripts/interface_process.py -s {{ ansible_net_hostname }}_intf_joined.csv

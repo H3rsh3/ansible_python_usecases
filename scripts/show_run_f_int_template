@@ -1,0 +1,20 @@
+#show run | sec interface
+Value INTERFACE (\S+)
+# Value IP_ADDRESS (\S+)
+# Value MASK (\S+)
+Value POLICY_MAP (\S+)
+Value VLAN_TAG (\d+)
+Value List HELPER_ADDRESS (\S+)
+Value List ACCESS_GROUP (\S+)
+Value List ACCESS_GROUP_DIR (\S+)
+
+Start
+  # When line starts with word
+  ^\w+ -> Continue.Record
+  ^^interface\s+${INTERFACE}
+#  ^\s+ip address\s+${IP_ADDRESS}\s+${MASK}
+  ^\s+encapsulation dot1Q\s+${VLAN_TAG}
+  # Fill out list of arrays
+  ^\s+ip helper-address\s+${HELPER_ADDRESS}
+  ^\s+ip policy route-map\s${POLICY_MAP}
+  ^\s+ip access-group\s${ACCESS_GROUP}\s${ACCESS_GROUP_DIR}

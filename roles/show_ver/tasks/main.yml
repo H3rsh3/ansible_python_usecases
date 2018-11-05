@@ -1,0 +1,17 @@
+---
+- name: get ios facts
+  ios_facts:
+
+# Gather Ver information
+- name: Fetch Output
+  ios_command:
+    commands: "show ver"
+  register: showver
+
+- name: Copy To File
+  local_action: copy content={{ showver.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_show_ver.log
+
+- name: Parse and Output
+  local_action: command python ./scripts/parse.py {{ ansible_net_hostname }}_show_ver.log show_ver_template
+
+#  run the join_across.yaml playbook to combine version files

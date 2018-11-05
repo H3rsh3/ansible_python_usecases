@@ -1,0 +1,15 @@
+---
+- name: get ios facts
+  ios_facts:
+
+# Gather Interface information
+- name: Grab BGP summary info
+  ios_command:
+    commands: "show ip route"
+  register: showrunsec
+
+- name: copy_to_file
+  local_action: copy content={{ showrunsec.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_show_route.log
+
+- name: Parse
+  local_action: command python ./scripts/parse.py {{ ansible_net_hostname }}_show_route.log show_ip_route_template

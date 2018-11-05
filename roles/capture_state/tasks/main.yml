@@ -1,0 +1,14 @@
+---
+- name: get ios facts
+  ios_facts:
+
+# Gather Interface information
+- name: Grab Run
+  ios_command:
+    commands: "{{ item  }}"
+  loop: "{{ show_cmd }}"
+  register: showlist
+
+- name: copy output
+  local_action: copy content={{ item.stdout[0] }} dest=./output/{{ ansible_net_hostname }}_{{ item.item }}.log
+  loop: "{{ showlist.results }}"

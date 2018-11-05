@@ -1,0 +1,15 @@
+---
+- name: Gather Version info
+  hosts: batch_a
+
+  roles:
+    - role: show_ver
+
+- name: Combine Files
+  hosts: localhost
+  tasks:
+    - include: join_across.yaml
+      vars:
+        TEMPLATE_FILE: "show_ver_template.csv"
+        PART_SOURCE_FILE_NAME: "_show_ver.log_prs.csv"
+        TABLE_KEY: "HOSTNAME"

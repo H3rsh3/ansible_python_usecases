@@ -1,0 +1,10 @@
+---
+show_cmd:
+  - show run
+  - show ip interface brief
+  - show ip route
+  - show ip route static
+  - show ip route connected
+  - show ip arp
+  - show mac address-table
+  - show ip bgp

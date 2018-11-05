@@ -1,0 +1,11 @@
+Value Required INTERFACE (\S+)
+Value LINK_STATUS (.+?)
+Value PROTOCOL_STATUS (.+?)
+Value DESCRIPTION (.+?)
+Value IP_ADDRESSM (\d+\.\d+\.\d+\.\d+\/\d+)
+
+Start
+  ^\S+\s+is\s+.+?,\s+line\s+protocol.*$$ -> Continue.Record
+  ^${INTERFACE}\s+is\s+${LINK_STATUS},\s+line\s+protocol\s+is\s+${PROTOCOL_STATUS}\s*$$
+  ^\s+Description:\s+${DESCRIPTION}\s*$$
+  ^\s+Internet\s+address\s+is\s+${IP_ADDRESSM}\s*$$
